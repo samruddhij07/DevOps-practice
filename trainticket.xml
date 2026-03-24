@@ -1,0 +1,22 @@
+<project name="traintickets" basedir="." default="run">
+
+	<property file="build.properties1" />
+
+	<target name="compile">
+		<mkdir dir="${builddir}/${classdir}" />
+		<javac srcdir="${srcdir}" destdir="${builddir}/${classdir}" includeantruntime="false"/>
+	</target>
+
+	<target name="jar" depends="compile">
+		<mkdir dir="${jardir}"/>
+		<jar destfile="${jardir}/${ant.project.name}.jar" basedir="${builddir}/${classdir}">
+			<manifest>
+				<attribute name="Main-Class" value="${mainclass}"/>
+			</manifest>
+		</jar>
+	</target>
+	
+	<target name="run" depends="jar">
+		<java jar="${jardir}/${ant.project.name}.jar" fork="true" />
+	</target>
+</project>

@@ -1,0 +1,5 @@
+srcdir=C:/Users/samjadhav/Desktop/ANT Proj prac/java proj/TrainTicketSystem/src
+builddir=build
+classdir=class
+jardir=jar
+mainclass=TrainTicketManager
